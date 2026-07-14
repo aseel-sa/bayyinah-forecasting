@@ -1,119 +1,91 @@
-BAYYINAH — AI-Powered Demand Forecasting Platform
+#  BAYYINAH
+### AI-Powered Demand Forecasting Platform
 
-BAYYINAH is an AI-powered demand forecasting and decision intelligence platform designed for small and medium manufacturing businesses.
-The platform helps users upload historical sales or demand data, check data quality, compare multiple forecasting models, and generate clear demand forecasts with business insights.
-Problem
-Manufacturing businesses often rely on spreadsheets, manual planning, and inaccurate forecasts. This can lead to stockouts, overstock, wasted inventory, poor production planning, and missed sales.
-Small and medium manufacturers may not have access to expensive enterprise forecasting systems or dedicated data science teams, creating a need for a more accessible and intelligent forecasting solution.
-Solution
-BAYYINAH turns messy sales and operational data into clear demand forecasts and business insights.
-The system analyzes uploaded data, checks data quality, creates forecasting features, compares multiple models, selects the best model for each product, and presents results in a business-friendly way.
+> End-to-end AI platform for demand forecasting, model comparison, and business decision support in manufacturing.
 
-How It Works
+---
 
-The user uploads a CSV or Excel file.
-The intake layer detects key columns such as date, product, and demand.
-The quality layer checks missing values, duplicates, outliers, and data issues.
-Feature engineering creates forecasting signals such as lags, rolling averages, calendar features, and seasonality indicators.
-The forecasting engine compares multiple models for each product.
-The system evaluates model performance using walk-forward validation.
-BAYYINAH generates forecasts, metrics, charts, insights, and scenario simulations.
+##  Problem
 
-Key Features
+Manufacturing businesses rely on spreadsheets and manual planning — leading to stockouts, overstock, and missed sales. Small and medium manufacturers lack access to enterprise forecasting tools or data science teams.
 
-CSV and Excel data upload
+---
 
-Automatic column detection
+##  Solution
 
-Data quality checks
+BAYYINAH turns messy sales data into clear demand forecasts and actionable business insights — no data science team required.
 
-Leakage-safe feature engineering
+---
 
-Product-level demand forecasting
+##  How It Works
 
-Comparison of multiple forecasting models
+1. Upload a CSV or Excel file
+2. Intake layer auto-detects date, product, and demand columns
+3. Quality layer checks missing values, duplicates, and outliers
+4. Feature engineering builds lags, rolling averages, and seasonality signals
+5. Forecasting engine compares 10 models per product
+6. Best model selected per product using walk-forward validation
+7. Platform generates forecasts, insights, and scenario simulations
 
-Best model selection per product
+---
 
-Walk-forward validation
+##  Key Features
 
-wMAPE-based model evaluation
+- ✅ Automatic column detection
+- ✅ Data quality checks with human-in-the-loop approval
+- ✅ Leakage-safe feature engineering
+- ✅ 10 forecasting models compared per product
+- ✅ Walk-forward backtesting
+- ✅ wMAPE-based model evaluation
+- ✅ Business-objective scoring (Accuracy / Balanced / Stockout / Overstock)
+- ✅ Scenario simulation (What-if analysis)
+- ✅ AI-generated business insights
 
-Forecast bias interpretation
+---
 
-Business-objective scoring
+##  Forecasting Models
 
-Scenario simulation
+| # | Model |
+|---|-------|
+| 1 | Naive |
+| 2 | Seasonal Naive |
+| 3 | Moving Average |
+| 4 | Exponential Smoothing |
+| 5 | SARIMA |
+| 6 | Prophet |
+| 7 | Croston |
+| 8 | Random Forest |
+| 9 | XGBoost |
+| 10 | Hybrid Ensemble |
 
-Forecast charts and insights
+---
 
-Forecasting Models
-BAYYINAH compares 10 active forecasting models:
+##  Model Evaluation
 
-Naive
+- **Walk-forward validation** — trains on past, tests on future
+- **wMAPE** — primary metric (weighted, works across products)
+- **MAE, RMSE, MAPE, Bias** — supporting metrics
 
-Seasonal Naive
+---
 
-Seasonal Average
+##  Business Objective Scoring
 
-Moving Average
+| Objective | Focus |
+|-----------|-------|
+| Accuracy Focused | Lowest historical error |
+| Balanced Planning | Low error + low bias |
+| Stockout Protection | Penalizes under-forecasting |
+| Overstock Control | Penalizes over-forecasting |
 
-Exponential Smoothing
+---
 
-SARIMA
+##  Tech Stack
 
-Prophet
+`Python` `Pandas` `NumPy` `Scikit-learn` `XGBoost` `Statsmodels` `Prophet` `FastAPI` `React`
 
-Croston
+---
 
-Random Forest
+##  Future Work
 
-XGBoost
-
-The platform also includes a hybrid ensemble that blends the best valid models.
-Model Evaluation
-BAYYINAH uses walk-forward validation because demand forecasting is time-based. Models are trained on past data and tested on future periods to reflect real forecasting conditions.
-wMAPE is used as the main evaluation metric because it works well for multiple products with different demand volumes. Additional metrics such as MAE, RMSE, MAPE, and forecast bias are used to explain error size, percentage error, large forecast misses, and over- or under-forecasting behavior.
-Business Objective Scoring
-
-BAYYINAH supports business-aware model selection. The system can compare models based on different business priorities:
-
-Accuracy Focused
-
-Balanced Planning
-
-Stockout Protection
-
-Overstock Control
-
-This helps users choose models not only based on accuracy, but also based on the type of forecasting error that matters most for the business decision.
-
-Tech Stack
-
-Python
-
-Pandas
-
-NumPy
-
-Scikit-learn
-
-XGBoost
-
-Statsmodels
-
-Prophet
-
-FastAPI
-
-React
-
-Future Work
-
-Real-time data connectors — stream live ERP and WMS data directly into the pipeline
-Automated alerts — detect demand anomalies and stockout risks before they impact operations
-Bayyinah Assistant — ask any question about your forecast in plain language
-Scale to more industries — expand beyond manufacturing into retail, energy, and healthcare
-
-Disclaimer
-BAYYINAH is a prototype built for educational and project purposes. Forecasting results should be reviewed and validated before being used in real business decisions.
+- Real-time data connectors (ERP / WMS integration)
+- Automated alerts for anomalies and
