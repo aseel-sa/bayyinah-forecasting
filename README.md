@@ -1,5 +1,3 @@
-تفضلي! النسخة الكاملة 👇
-
 BAYYINAH — AI-Powered Demand Forecasting Platform
 BAYYINAH is an AI-powered demand forecasting and decision intelligence platform designed for small and medium manufacturing businesses.
 The platform helps users upload historical sales or demand data, check data quality, compare multiple forecasting models, and generate clear demand forecasts with business insights.
