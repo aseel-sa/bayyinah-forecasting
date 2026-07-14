@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import pandas, numpy; print\\('pandas', pandas.__version__\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('intake.py',encoding='utf-8'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('model.py',encoding='utf-8'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
+      "Bash(python -c \"import streamlit\")",
+      "Bash(pip install *)",
+      "Bash(python -c \"import streamlit; print\\('streamlit', streamlit.__version__\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(timeout 18 python -m streamlit run app.py --server.headless true --server.port 8533)",
+      "Bash(python -c \"import ast; [ast.parse\\(open\\(f,encoding='utf-8'\\).read\\(\\)\\) for f in \\('intake.py','mapping_memory.py','llm_mapper.py'\\)]; print\\('syntax OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('quality.py',encoding='utf-8'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('model.py',encoding='utf-8'\\).read\\(\\)\\); ast.parse\\(open\\('pipeline.py',encoding='utf-8'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
+      "Bash(python -c \"import sys, pandas, numpy, sklearn, xgboost; print\\('py', sys.version.split\\(\\)[0], '| pandas', pandas.__version__, '| sklearn OK | xgboost OK'\\)\")",
+      "PowerShell(python --version)",
+      "PowerShell(python -c \"import pandas, numpy, sklearn, xgboost; print\\('pandas', pandas.__version__\\); print\\('numpy', numpy.__version__\\)\")",
+      "PowerShell(python -c \"import pytest; print\\('pytest', pytest.__version__\\)\")",
+      "PowerShell(python \"$env:TEMP\\\\bayyina_golden_run.py\" | Tee-Object -FilePath \"$env:TEMP\\\\bayyina_golden_before.txt\")",
+      "PowerShell(python \"$env:TEMP\\\\bayyina_golden_run.py\" > \"$env:TEMP\\\\bayyina_golden_repeat.txt\"; if \\(\\(Get-Content \"$env:TEMP\\\\bayyina_golden_before.txt\" -Raw\\) -eq \\(Get-Content \"$env:TEMP\\\\bayyina_golden_repeat.txt\" -Raw\\)\\) { 'DETERMINISTIC: identical digests' } else { 'NON-DETERMINISTIC: digests differ' })",
+      "WebSearch",
+      "PowerShell(python \"$env:TEMP\\\\bayyina_prep_wine.py\" 2>&1 | Where-Object { $_ -notmatch 'cmdstanpy|plotly' })"
+    ]
+  }
+}
